@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>【秀儿】纯 CSS 检测文本是否溢出 - Tianci</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content=", 实用, CSS">
+  <meta name="description" content="一、CSS 滚动驱动动画要实现文本溢出检测，需要用到两...">
+  <meta name="author" content="tianci">
+  <link rel="icon" href="/images/icons/logo.svg" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/logo.svg" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/logo.svg" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/logo.svg">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: false,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: 'https://source.unsplash.com/random/1920x1080'
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'none'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">【秀儿】纯 CSS 检测文本是否溢出</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/bg/1.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">【秀儿】纯 CSS 检测文本是否溢出</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 30, 2024</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>8251</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <h2 id="一、CSS-滚动驱动动画"><a href="#一、CSS-滚动驱动动画" class="headerlink" title="一、CSS 滚动驱动动画"></a>一、CSS 滚动驱动动画</h2><p>要实现文本溢出检测，需要用到两个新特性</p>
+<ol>
+<li>CSS 滚动驱动动画</li>
+<li>CSS 样式查询</li>
+</ol>
+<p>为什么是这两个呢？听我慢慢分析。</p>
+<p>首先我们想一想，在 <code>JS</code>中是如何判断是否溢出的？很简单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dom.scrollHeight &gt; dom.offsetHeight;</span><br></pre></td></tr></table></figure>
+
+<p>其实也就是表示这个容器是“可滚动”的，因为滚动高度超过了可视高度</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFCWb0uATa4APMe8Rpdo013DUW93tYXJdNEZH7ksq7utFQUk2icEnCgicw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>回到 <code>CSS</code> 这里，有没有办法区分呢？答案就是<code>CSS</code>滚动驱动动画</p>
+<blockquote>
+<p>关于 CSS 滚动驱动动画，可以先回顾这篇文章：<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMDc1NTYxNg==&mid=2247487775&idx=1&sn=54d09243e36c7d5470982d4237bf8303&chksm=97c672d0a0b1fbc6676ce29a16e13f186689e253d0d7c1454fb95c8d9530b7d443468b94ad4b&scene=21#wechat_redirect"><strong>CSS 滚动驱动动画终于正式支持了~</strong> </a></p>
+</blockquote>
+<p>假设有这样一个布局，就两段文本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;txt&quot;&gt;</span><br><span class="line">  欢迎关注前端侦探，这里有一些有趣的、你可能不知道的HTML、CSS、JS小技巧技巧。欢迎关注前端侦探，这里有一些有趣的、你可能不知道的HTML、CSS、JS小技巧技巧。欢迎关注前端侦探，这里有一些有趣的、你可能不知道的HTML、CSS、JS小技巧技巧。</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;txt&quot;&gt;</span><br><span class="line">  欢迎关注前端侦探</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>稍微修饰一下，给个高度，让文本可以超出滚动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  height: 4em;</span><br><span class="line">  padding: 8px;</span><br><span class="line">  outline: 1px dashed #9747FF;</span><br><span class="line">  font-family: cursive;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFuRBkljQPzf4gNet0bf98qlBqDVxfhjxZOlvvcvrBlDkzicfrIjoVCeQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>左边是可以滚动的，右边是不能滚动的。</p>
+<p>现在，我们给左边加一个滚动驱动动画，在滚动时慢慢改变文本的颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  animation: check 1s;</span><br><span class="line">  animation-timeline: scroll(self);</span><br><span class="line">&#125;</span><br><span class="line">@keyframes check&#123;</span><br><span class="line">  to &#123;</span><br><span class="line">    color: #9747FF;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意这个<code>scroll(self)</code>，<code>self</code>表示监听自身滚动，默认是最近的祖先滚动容器，效果是这样的</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_gif/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFGErVSWOLqwvYxXX0KazLUpHDU3J2IrMAyPl8WGV0ecWhf05Sa8ibl3Q/640?wx_fmt=gif&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>可以看到随着滚动，左边文本的颜色也慢慢变化了</p>
+<p>接着激进一点，我们在动画中把起始点都设置成一样，这样还没开始滚动就自动变色了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@keyframes check&#123;</span><br><span class="line">  from,to &#123;</span><br><span class="line">    /*动画起始点设置成相同*/</span><br><span class="line">    color: #9747FF;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFsVcNCV15ibb0PbNqTEFtJXHcz1ZnIWOfsWrJELz4KiaGSTI8xKuuOSfg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>这样即使还没开始滚动，也能提前知道是否可滚动了</p>
+<p>然后，我们可以设置超出隐藏，也就是让滚动容器“不能滚动”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFsVcNCV15ibb0PbNqTEFtJXHcz1ZnIWOfsWrJELz4KiaGSTI8xKuuOSfg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>也就是说这种情况下，<code>CSS</code>滚动驱动动画仍然可以被触发。尝试了一下，只要不是<code>overflow:visible</code>，<code>CSS</code>都认为是“可滚动”的，即“溢出”状态。</p>
+<p>最后，我们将文本设置成超出显示省略号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  display: -webkit-box;</span><br><span class="line">  -webkit-box-orient: vertical;</span><br><span class="line">  -webkit-line-clamp: 3;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFZqDaxGoibc6uD9wQVzB2a8lhKqQOmCSHgbDYicOfSLId9vKWj4AqPVwQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>是不是有点能区分文本是否溢出了？至少目前从文本颜色可以很好判断</p>
+<p>当然，仅仅这样是不够，还需要更加自由，比如在超出时可以控制其他标签的状态，这就需要用到 CSS 样式查询了</p>
+<h2 id="二、CSS-样式查询"><a href="#二、CSS-样式查询" class="headerlink" title="二、CSS 样式查询"></a>二、CSS 样式查询</h2><p>下面介绍一下<code>CSS</code>样式查询。</p>
+<blockquote>
+<p><strong>@container - CSS: Cascading Style Sheets | MDN (mozilla.org)[1]</strong></p>
+</blockquote>
+<p>CSS 样式查询是容器查询的一部分，从名称也可以看出，它可以查询元素的样式，进而设置额外的样式。</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFRlG5CaJz6f9N1ssr2HCPjYKHV2icK7W35K84CTBpkctR8HcKrMtiaqAg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>比如，我们要查询颜色为红色的容器，然后给子元素设置背景色为黑色，可以这样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  div&#123;</span><br><span class="line">    color:red;</span><br><span class="line">  &#125;</span><br><span class="line">  @container style(color: red) &#123;</span><br><span class="line">    p &#123;</span><br><span class="line">      background: black;</span><br><span class="line">    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>有人可能会有疑问，为啥要设置子元素，直接设置本身不好吗？其实是为了避免冲突，假设查询到了<code>color:red</code>，然后你又设置了<code>color:yellow</code>，那浏览器该如何渲染呢？有点死循环了。所以为了避免这种情况，所有容器查询都只能设置子元素样式。</p>
+<p>不过这种写法目前还不支持，仅支持<code>CSS</code>变量的写法，类似于这样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  div&#123;</span><br><span class="line">    --color:red;</span><br><span class="line">  &#125;</span><br><span class="line">  @container style(--color: red) &#123;</span><br><span class="line">    p &#123;</span><br><span class="line">      background: black;</span><br><span class="line">    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>回到前面的例子，我们可以给文本加一个<code>CSS</code>变量，就叫做<code> --trunc</code>吧，表示截断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  --trunc: false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在滚动驱动动画中改变这个变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@keyframes check&#123;</span><br><span class="line">  from,to &#123;</span><br><span class="line">    /*动画起始点设置成相同*/</span><br><span class="line">    color: #9747FF;</span><br><span class="line">    --trunc: true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样一来，滚动驱动动画执行的时候，这个变量也被赋值了。</p>
+<p>最后我们就可以查询这个样式，给子元素设置样式了，这里我们就用伪元素代替</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@container style(--trunc: true) &#123;</span><br><span class="line">  .txt::after&#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    inset: 2px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码表示当查询到<code>--trunc: true</code>的条件时，设置相应的样式，这里是画了一个红色的边框，效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFrLPovxPAYI0OlydiaR4e5lpia8dNseh4vdHSricFzHBNTcicQgGM8q8iaWA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>是不是非常容易？</p>
+<p>你也可以查看以下在线链接（注意兼容性，需要 <code>Chrome 115+</code>，以下相同）：</p>
+<ul>
+<li><strong>CSS animation-timeline + @ container style (codepen.io)[2]</strong></li>
+<li><strong>CSS animation-timeline + @ container style (juejin.cn)[3]</strong></li>
+</ul>
+<p>有了这个作为区分，可做的事情就比较多了，下面来看几个例子</p>
+<h2 id="三、CSS-多行文本展开收起"><a href="#三、CSS-多行文本展开收起" class="headerlink" title="三、CSS 多行文本展开收起"></a>三、CSS 多行文本展开收起</h2><p>这已经是第四次用不同方式来实现这个效果了，前几次的实现可以参考文章开头部分。</p>
+<p>这次来看新的实现方式。</p>
+<p>首先还是把之前的结构拿过来，这些结构是为了实现右下角的“展开”按钮必不可少的，如果不太清楚是如何布局的，建议好好回顾一下之前这篇文章：<strong>CSS 实现多行文本“展开收起”[4]</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;text-wrap&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;text-content&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;expand&quot;&gt;&lt;input type=&quot;checkbox&quot; hidden&gt;&lt;/label&gt;</span><br><span class="line">    欢迎关注前端侦探，这里有一些有趣的、你可能不知道的HTML、CSS、JS小技巧技巧。</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>相关 <code>CSS</code> 如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">.text-wrap&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: 300px;</span><br><span class="line">  padding: 8px;</span><br><span class="line">  outline: 1px dashed #9747FF;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  text-align: justify;</span><br><span class="line">  font-family: cursive;</span><br><span class="line">&#125;</span><br><span class="line">.expand&#123;</span><br><span class="line">  font-size: 80%;</span><br><span class="line">  padding: .2em .5em;</span><br><span class="line">  background-color: #9747FF;</span><br><span class="line">  color: #fff;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  float: right;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.expand::after&#123;</span><br><span class="line">  content: &#x27;展开&#x27;;</span><br><span class="line">&#125;</span><br><span class="line">.text-content&#123;</span><br><span class="line">  display: -webkit-box;</span><br><span class="line">  -webkit-box-orient: vertical;</span><br><span class="line">  -webkit-line-clamp: 3;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.text-content::before&#123;</span><br><span class="line">  content: &#x27;&#x27;;</span><br><span class="line">  float: right;</span><br><span class="line">  height: calc(100% - 24px);</span><br><span class="line">&#125;</span><br><span class="line">.text-wrap:has(:checked) .text-content&#123;</span><br><span class="line">  -webkit-line-clamp: 999;</span><br><span class="line">&#125;</span><br><span class="line">.text-wrap:has(:checked) .expand::after&#123;</span><br><span class="line">  content: &#x27;收起&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时的效果是这样的</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFM9p7rtic0821K0v5Bafq4o8qANkUY1GWpiaZVicInC9rz8QbuYxZ8f7kA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>通过上一节的原理，我们通过滚动驱动动画来判断是否溢出，并使用<code>CSS</code>变量作为标识，然后利用样式查询来控制展开按钮的显示状态，关键实现如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.expand&#123;</span><br><span class="line">	/**/</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line">.text-content&#123;</span><br><span class="line">  --trunc: false;</span><br><span class="line">  animation: check 1s;</span><br><span class="line">  animation-timeline: scroll(self);</span><br><span class="line">&#125;</span><br><span class="line">@keyframes check&#123;</span><br><span class="line">  from,to &#123;</span><br><span class="line">    --trunc: true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@container style(--trunc: true) &#123;</span><br><span class="line">  .expand&#123;</span><br><span class="line">    display: initial;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>展开按钮默认是隐藏的，这样只有在文本溢出的时候才出现，效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_gif/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFI18R8mCe5kTH9cr6y75FnkGfhcsKEnicjJ3XyZ181pKY58MPEGiaqoUQ/640?wx_fmt=gif&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>效果出来了，不过在点击展开后按钮也跟着消失了。这是因为展开后，<code>CSS</code>检测出这时没有溢出，所以样式查询里的语句就不生效了，自然也就回到了之前的隐藏状态。</p>
+<p>要解决这个问题也很简单，在展开的时候始终显示按钮就行了,用<code>:checked</code>可以判断是否展开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.text-wrap:has(:checked) .expand&#123;</span><br><span class="line">  display: initial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就正常了，完美！</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_gif/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFbVPqvgCprl5yDPNlnTfrNDshmz8VcMvOrFicS6Pf4kXmSaG9wt9lzbw/640?wx_fmt=gif&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>CSS 方式的好处是监控是实时的，比如手动改变容器的宽度，也会自动显示或者隐藏这个按钮</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_gif/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFOW8VQhe1T5VZOV9ruzq2jF4Dk0mUGXV5DEzSz9EXpYk4YO15A7Yjibw/640?wx_fmt=gif&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>完整 demo 可以查看以下在线链接（ <code>Chrome 115+</code>）：</p>
+<ul>
+<li><strong>CSS container style expand (codepen.io)[5]</strong></li>
+<li><strong>CSS container style expand (juejin.cn)[6]</strong></li>
+</ul>
+<h2 id="四、CSS-文本超出时显示-tooltips"><a href="#四、CSS-文本超出时显示-tooltips" class="headerlink" title="四、CSS 文本超出时显示 tooltips"></a>四、CSS 文本超出时显示 tooltips</h2><p>还有一个比较常见的需求，就是希望在文本出现省略号时，鼠标<code>hover</code>有<code>tooltips</code>提示，就像这样</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_gif/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFtBBAsTl9pAK81tBAPf761FnH3PfWucWTLvSRuFE5jWNgdro0TCK8gA/640?wx_fmt=gif&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>原理和上面几乎一致，我们一步步来看</p>
+<p>首先还是结构，没什么特别的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;txt&quot; data-title=&quot;这是一段可以自动出现tooltip的文本&quot;&gt;</span><br><span class="line">  这是一段可以自动出现tooltip的文本</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里加了一个<code>data-title</code>，是用来显示气泡的，通过伪元素<code>content</code>获取属性内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  padding: 8px;</span><br><span class="line">  outline: 1px dashed #9747FF;</span><br><span class="line">  font-family: cursive;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">&#125;</span><br><span class="line">.txt::after&#123;</span><br><span class="line">  content: attr(data-title);</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  width: fit-content;</span><br><span class="line">  left: 50%;</span><br><span class="line">  margin: auto;</span><br><span class="line">  transform: translate(-50%,-100%);</span><br><span class="line">  background-color: rgba(0,0,0,.6);</span><br><span class="line">  padding: .3em 1em;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  color: #fff;</span><br><span class="line">  opacity: 0;</span><br><span class="line">  visibility: hidden;</span><br><span class="line">  transition: .2s .1s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_png/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFjsP2uF8oWZOABYpOb27QCRjb6V6RBv8mzI3urAic1NwL9w9f19afJaQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>目前是没有任何提示的。</p>
+<p>下面加上<code>CSS</code>溢出检测，在检测到溢出时<code>hover</code>生效。仍然是相同的代码，添加一个滚动驱动动画，然后样式查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.txt&#123;</span><br><span class="line">  --trunc: false;</span><br><span class="line">  animation: check 1s;</span><br><span class="line">  animation-timeline: scroll(x self);</span><br><span class="line">&#125;</span><br><span class="line">@keyframes check&#123;</span><br><span class="line">  from,to &#123;</span><br><span class="line">    --trunc: true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@container style(--trunc: true) &#123;</span><br><span class="line">  .txt:hover::after&#123;</span><br><span class="line">    opacity: 1;</span><br><span class="line">    visibility: visible;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意，这里的<code>scroll(x self)</code>，加了一个<code>x</code>，因为这时的文本是横向溢出的，所以需要加上滚动驱动轴（默认是垂直方向）</p>
+<p>另外，由于超出隐藏，所以<code>tooltip</code>需要一个新的父级，不然就被裁掉了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;txt&quot; data-title=&quot;这是一段可以自动出现tooltip的文本&quot;&gt;</span><br><span class="line">    这是一段可以自动出现tooltip的文本</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.wrap&#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就能实现文本超出时显示 tooltips</p>
+<p><img    class="lazyload" data-original="https://mmbiz.qpic.cn/mmbiz_gif/xvBbEKrVNtILsg4PGPSeZYJwDQ7CvKlFtBBAsTl9pAK81tBAPf761FnH3PfWucWTLvSRuFE5jWNgdro0TCK8gA/640?wx_fmt=gif&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">图片</span></p>
+<p>完整 demo 可以查看以下在线链接（ <code>Chrome 115+</code>）：</p>
+<ul>
+<li><strong>CSS container style tooltip (codepen.io)[7]</strong></li>
+<li><strong>CSS container style tooltip (juejin.cn)[8]</strong></li>
+</ul>
+<h2 id="五、最后总结一下"><a href="#五、最后总结一下" class="headerlink" title="五、最后总结一下"></a>五、最后总结一下</h2><p>CSS 就是这么神奇，将两个几乎不相关的特性组合起来，就能实现完全不一样的功能，这可是在其他语言中做不到的，简单回顾一下 CSS 检测代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;</span><br><span class="line">  --trunc: false;</span><br><span class="line">  animation: check 1s;</span><br><span class="line">  animation-timeline: scroll(x self); /*注意溢出方向*/</span><br><span class="line">&#125;</span><br><span class="line">@keyframes check&#123;</span><br><span class="line">  from,to &#123;</span><br><span class="line">    --trunc: true; /*滚动驱动动画*/</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*查询溢出状态*/</span><br><span class="line">@container style(--trunc: true) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>是不是非常容易，几乎是无侵入式的，下面总结一下本文重点</p>
+<ol>
+<li>要实现文本溢出检测，需要用到两个新特性，CSS 滚动驱动动画和 CSS 样式查询</li>
+<li>CSS 滚动驱动动画可以检测出容器是否可滚动，也就是溢出，即使是在超出隐藏的情况下</li>
+<li>CSS 样式查询可以查询到 CSS 变量的变化，从而设置不同的样式</li>
+<li>借助 CSS 滚动驱动动画和 CSS 样式查询，可以很轻松的实现文本溢出检测</li>
+<li>两个实例：CSS 多行文本展开收起和 CSS 文本超出时显示 tooltips</li>
+</ol>
+<p>当然除了以上一些案例，还可以做的事情很多，比如以前有写一篇判断指定高度后就显示折叠按钮，也可以用这种方式来实现，几乎所有与溢出相关的交互都可以纯 CSS 完成。</p>
+<p>至于兼容性，目前仅支持 <code>chrome 115+</code>，还是需要多等等，多多关注，说不定哪一天就能用上了呢，比如 5 年前推出的<code>CSS scroll snap</code>，现在几乎可以愉快使用了，再也无需<code>swiper.js</code>这样的库了。最后，如果觉得还不错，对你有帮助的话，欢迎点赞、收藏、转发 ❤❤❤</p>
+<p>[1]@container - CSS: Cascading Style Sheets | MDN (mozilla.org)： <em><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@container">https://developer.mozilla.org/en-US/docs/Web/CSS/@container</a></em></p>
+<p>[2]CSS animation-timeline + @ container style (codepen.io)： <em><a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/jORrXBe">https://codepen.io/xboxyan/pen/jORrXBe</a></em></p>
+<p>[3]CSS animation-timeline + @ container style (juejin.cn)： <em><a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7346120235966267427">https://code.juejin.cn/pen/7346120235966267427</a></em></p>
+<p>[4]CSS 实现多行文本“展开收起”： <em><a target="_blank" rel="noopener" href="https://juejin.cn/post/6963904955262435336">https://juejin.cn/post/6963904955262435336</a></em></p>
+<p>[5]CSS container style expand (codepen.io)： <em><a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/qBwaaWW">https://codepen.io/xboxyan/pen/qBwaaWW</a></em></p>
+<p>[6]CSS container style expand (juejin.cn)： <em><a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7346120018578374694">https://code.juejin.cn/pen/7346120018578374694</a></em></p>
+<p>[7]CSS container style tooltip (codepen.io)： <em><a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/oNOzzYb">https://codepen.io/xboxyan/pen/oNOzzYb</a></em></p>
+<p>[8]CSS container style tooltip (juejin.cn)： <em><a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7346125496281333814">https://code.juejin.cn/pen/7346125496281333814</a></em></p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>tianci</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2024/04/30/%E3%80%90%E7%A7%80%E5%84%BF%E3%80%91%E7%BA%AF%20CSS%20%E6%A3%80%E6%B5%8B%E6%96%87%E6%9C%AC%E6%98%AF%E5%90%A6%E6%BA%A2%E5%87%BA/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;04&#x2F;30&#x2F;%E3%80%90%E7%A7%80%E5%84%BF%E3%80%91%E7%BA%AF%20CSS%20%E6%A3%80%E6%B5%8B%E6%96%87%E6%9C%AC%E6%98%AF%E5%90%A6%E6%BA%A2%E5%87%BA&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;04&#x2F;30&#x2F;%E3%80%90%E7%A7%80%E5%84%BF%E3%80%91%E7%BA%AF%20CSS%20%E6%A3%80%E6%B5%8B%E6%96%87%E6%9C%AC%E6%98%AF%E5%90%A6%E6%BA%A2%E5%87%BA&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E7%94%A8/" rel="tag">实用</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2024/04/30/%E7%81%B0%E5%B8%B8nice%E7%9A%84%E9%82%A3%E4%BA%9BCSS/"><i class="iconfont iconleft"></i>灰常nice的那些CSS</a>
+    <a href="/2024/04/30/CSS%E5%AE%9E%E7%8E%B0%E6%A8%A1%E7%B3%8A%E3%80%81%E9%95%82%E7%A9%BA%E3%80%81%E6%B8%90%E5%8F%98%E3%80%81%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%E7%AD%89%E4%BC%98%E7%BE%8E%E7%9A%84%E6%96%87%E5%AD%97%E6%A0%B7%E5%BC%8F/">CSS实现模糊、镂空、渐变、图片背景等优美的文字样式<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81CSS-%E6%BB%9A%E5%8A%A8%E9%A9%B1%E5%8A%A8%E5%8A%A8%E7%94%BB"><span class="toc-text">一、CSS 滚动驱动动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CSS-%E6%A0%B7%E5%BC%8F%E6%9F%A5%E8%AF%A2"><span class="toc-text">二、CSS 样式查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81CSS-%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E5%B1%95%E5%BC%80%E6%94%B6%E8%B5%B7"><span class="toc-text">三、CSS 多行文本展开收起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81CSS-%E6%96%87%E6%9C%AC%E8%B6%85%E5%87%BA%E6%97%B6%E6%98%BE%E7%A4%BA-tooltips"><span class="toc-text">四、CSS 文本超出时显示 tooltips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="toc-text">五、最后总结一下</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail "></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
