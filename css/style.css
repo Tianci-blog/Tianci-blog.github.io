@@ -9,6 +9,7 @@
   --background-image: url("/images/bg/3.jpg");
   --loading-image: url("/images/theme/loading.gif");
   --lazyload-image: url("/images/theme/loading.gif");
+  --color-background-code: #f5f5f5;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -25,6 +26,7 @@
     --background-image: url("/images/bg/2.jpg");
     --loading-image: url("/images/theme/loading.gif");
     --lazyload-image: url("/images/theme/loading.gif");
+    --color-background-code: #303030;
   }
 }
 [color-mode='dark'] {
@@ -38,6 +40,7 @@
   --background-image: url("/images/bg/2.jpg");
   --loading-image: url("/images/theme/loading.gif");
   --lazyload-image: url("/images/theme/loading.gif");
+  --color-background-code: #303030;
 }
 [color-mode='dark'] .tags a {
   color: var(--color-text) !important;
@@ -822,7 +825,9 @@ body input {
   -webkit-line-clamp: 1;
 }
 .substr-3 {
-  -webkit-line-clamp: 3;
+  width: 100%;
+  margin-bottom: 0;
+  -webkit-line-clamp: 2;
 }
 .lock-screen {
   overflow: hidden;
@@ -1404,12 +1409,17 @@ body input {
 .post .post-item {
   margin-bottom: 30px;
 }
-.post .post-item .post-wrap:hover {
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.1);
+.post .post-item .post-wrap:hover .post-title>a {
+  color: #ff3b00;
+}
+.post .post-item .post-wrap:hover .post-image>img {
+  transform: scale(1.1);
 }
 .post .post-item .post-wrap {
   box-shadow: 0 5px 40px -1px rgba(2,10,18,0.11);
   background-color: var(--color-background);
+  border-radius: 10px;
+  overflow: hidden;
 }
 .post .post-item .post-wrap .post-top {
   z-index: 10;
@@ -1442,6 +1452,7 @@ body input {
   width: 100%;
   height: 0;
   padding-bottom: 66%;
+  overflow: hidden;
 }
 .post .post-item .post-wrap .post-image img {
   position: absolute;
@@ -1457,7 +1468,7 @@ body input {
   transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
 .post .post-item .post-wrap .post-image img:hover {
-  filter: grayscale(100%);
+  transform: scale(1.1);
 }
 .post .post-item .post-wrap .post-content {
   position: relative;
@@ -1470,6 +1481,7 @@ body input {
 }
 .post .post-item .post-wrap .post-content .post-title {
   font-size: 1.5em;
+  margin-bottom: 15px;
 }
 .post .post-item .post-wrap .post-content .post-title a {
   display: -webkit-box;
@@ -1505,6 +1517,8 @@ body input {
 .article .wrap {
   margin: 0 auto;
   box-shadow: 0 5px 40px -1px rgba(2,10,18,0.11);
+  border-radius: 10px;
+  overflow: hidden;
 }
 @media (max-width: 576px) {
   .article .wrap {
@@ -1634,7 +1648,7 @@ body input {
 }
 .article .wrap .main .content table {
   margin: 10px auto;
-  min-width: 100%;
+  width: 100%;
   text-align: center;
 }
 .article .wrap .main .content table,
@@ -1649,12 +1663,15 @@ body input {
   margin: 0;
   overflow: auto;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 .article .wrap .main .content figure .code {
   padding: 0;
   border: none;
 }
-.article .wrap .main .content figure .code code {
+.article .wrap .main .content figure .code code,
+.article .wrap .main .content figure .code pre {
+  background-color: var(--color-background-code);
   padding: 1em;
 }
 .article .wrap .main .content figure > * {
@@ -1758,6 +1775,7 @@ body input {
   list-style-type: none;
   margin-right: 1em;
   padding: 5px 10px;
+  border-radius: 5px;
   background-color: var(--color-background-secondary);
 }
 .article .wrap .main .extra .tag-list .tag-list-item a {
@@ -1959,6 +1977,10 @@ body input {
   padding: 0;
   text-align: center;
 }
+.categories ul li:hover span,
+.categories ul li:hover a {
+  color: #ff3b00;
+}
 .categories ul li {
   font-size: 1rem;
   list-style: none;
@@ -1966,6 +1988,8 @@ body input {
   display: inline-block;
   padding: 5px 10px;
   background-color: var(--color-background-secondary);
+  border-radius: 5px;
+  cursor: pointer;
 }
 .categories ul li a {
   margin-right: 5px;
@@ -1990,12 +2014,18 @@ body input {
   }
 }
 .tags .tags-container {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .tags a {
   padding: 5px 10px;
   background-color: var(--color-background-secondary);
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
+  height: fit-content;
+  border-radius: 4px;
 }
 .tags a:hover {
   background-color: #ff3b00;
