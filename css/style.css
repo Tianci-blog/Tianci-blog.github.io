@@ -1447,7 +1447,7 @@ body input {
 @media (min-width: 768px) {
   .post {
     padding-top: 45px;
-    width: 85vw;
+    width: 100%;
   }
 }
 .post .post-item {
