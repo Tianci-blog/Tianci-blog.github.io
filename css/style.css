@@ -53,7 +53,7 @@
   background-color: rgba(var(--color-background-rgb), 0.7) !important;
 }
 .navbar {
-  background-color: rgba(var(--color-background-rgb), 0.8) !important;
+  background-color: rgba(var(--color-background-rgb), 0.007) !important;
 }
 .zui-notification {
   background-color: rgba(var(--color-background-rgb), 0.7) !important;
@@ -181,12 +181,17 @@ body input {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+@media (max-width: 768px) {
+  .row {
+    justify-content: center;
+  }
+}
 .col-1,
 .col-md-1,
 .col-lg-1,
 .col-xl-1 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -204,7 +209,7 @@ body input {
 .col-lg-2,
 .col-xl-2 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -222,7 +227,7 @@ body input {
 .col-lg-3,
 .col-xl-3 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -240,7 +245,7 @@ body input {
 .col-lg-4,
 .col-xl-4 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -258,7 +263,7 @@ body input {
 .col-lg-5,
 .col-xl-5 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -276,7 +281,7 @@ body input {
 .col-lg-6,
 .col-xl-6 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -294,7 +299,7 @@ body input {
 .col-lg-7,
 .col-xl-7 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -312,7 +317,7 @@ body input {
 .col-lg-8,
 .col-xl-8 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -330,7 +335,7 @@ body input {
 .col-lg-9,
 .col-xl-9 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -348,7 +353,7 @@ body input {
 .col-lg-10,
 .col-xl-10 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -366,7 +371,7 @@ body input {
 .col-lg-11,
 .col-xl-11 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -384,7 +389,7 @@ body input {
 .col-lg-12,
 .col-xl-12 {
   position: relative;
-  width: 100%;
+  width: 95%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -1022,22 +1027,39 @@ body input {
   width: 100%;
   top: 0;
   z-index: 50;
-  background-color: rgba(255,255,255,0.8);
-  -webkit-backdrop-filter: saturate(180%) blur(5px);
-  backdrop-filter: saturate(180%) blur(5px);
+  background-color: rgba(255,255,255,0.07);
+  -webkit-backdrop-filter: saturate(180%) blur(1px);
+  backdrop-filter: saturate(180%) blur(1px);
   transition: transform 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
-.navbar.hide {
-  transform: translateY(-55px);
-}
-.navbar.transparent {
-  background-color: rgba(255,255,255,0) !important;
-  backdrop-filter: none;
-}
 .navbar > div {
-  flex: 1;
   display: inline-flex;
   text-align: center;
+}
+.navbar .menu-content.show {
+  transform: translateY(0);
+}
+.navbar .menu-content {
+  width: auto;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  transform: translateY(-40px);
+  transition: all 0.15s ease-in;
+}
+@media (max-width: 768px) {
+  .navbar .menu-content {
+    transform: translateY(0);
+  }
+}
+.navbar .menu-content .menu-item {
+  flex-shrink: 0;
+  font-size: 1.35em;
+  list-style: none;
+  margin-right: 10px;
+}
+.navbar .menu-content .menu-item .underline.active {
+  text-decoration: line-through;
 }
 .navbar .left {
   justify-content: flex-start;
@@ -1056,17 +1078,26 @@ body input {
 }
 .navbar .right {
   justify-content: flex-end;
-  padding-right: 15px;
+  padding-right: 20px;
 }
-.navbar .right .iconfont:not(:last-child) {
-  margin-right: 10px;
+@media (max-width: 768px) {
+  .navbar .right {
+    padding-right: 0px;
+  }
 }
 .navbar .iconfont {
-  font-size: 22px;
+  font-size: 24px;
   color: var(--color-text);
+  position: relative;
+  top: 1px;
 }
 .navbar .iconfont:hover {
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .navbar .iconmenu {
+    display: none;
+  }
 }
 .navbar #qrcode-navbar {
   position: absolute;
@@ -1140,6 +1171,13 @@ body input {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .preview .preview-image {
+    height: 35vh;
+    background-size: 100% 100%;
+    background-attachment: initial;
+  }
+}
 .preview .preview-image .preview-video {
   object-fit: cover;
   width: 100%;
@@ -1193,6 +1231,11 @@ body input {
   z-index: 50;
   width: 100%;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .preview .preview-motto-wrapper {
+    top: 15vh;
+  }
 }
 .preview .preview-motto-wrapper .preview-motto {
   display: inline;
@@ -1404,6 +1447,7 @@ body input {
 @media (min-width: 768px) {
   .post {
     padding-top: 45px;
+    width: 85vw;
   }
 }
 .post .post-item {
@@ -1507,6 +1551,7 @@ body input {
 @media (min-width: 768px) {
   .article-wrap {
     margin-top: 70px;
+    max-width: 85vw;
   }
 }
 @media (min-width: 1200px) {

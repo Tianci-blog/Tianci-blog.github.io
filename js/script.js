@@ -322,10 +322,12 @@
         $(window).scroll(fn.scroolFab);
       }
     },
+    // 关闭导航菜单
     menu: function () {
-      $(".menu-close").on("click", function () {
-        fn.hideMenu();
-        $(".navbar").removeClass("hide");
+      $(".j-navbar-menu-close").on("click", function () {
+        // fn.hideMenu();
+        $(".j-navbar-menu").removeClass("hide");
+        $(".menu-content").removeClass("show");
       });
     },
     scroolToTop: function () {
@@ -392,6 +394,7 @@
         }, 1000)
       );
     },
+    // 显示菜单
     navbar: function () {
       $(window)
         .resize(
@@ -402,8 +405,12 @@
         )
         .resize();
       $(".j-navbar-menu").on("click", function () {
-        fn.showMenu();
-        $(".navbar").addClass("hide");
+        // fn.showMenu();
+        if ($(".menu-content").hasClass("show")) {
+          $(".menu-content").removeClass("show");
+        } else {
+        $(".menu-content").addClass("show");
+        }
         $(".qrcode").fadeOut(300);
       });
       $(".j-navbar-qrcode").on("click", function () {
