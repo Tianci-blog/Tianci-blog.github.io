@@ -212,7 +212,7 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 30, 2024</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>270</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>267</span>
     </div>
   </div>
 </section>
@@ -250,7 +250,7 @@
 <td>网站：</td>
 <td></td>
 <td>Email：</td>
-<td><a href="mailto:&#x74;&#105;&#97;&#x6e;&#x63;&#x69;&#x31;&#50;&#x30;&#x38;&#x40;&#x6f;&#x75;&#116;&#x6c;&#111;&#x6f;&#x6b;&#46;&#x63;&#111;&#x6d;">&#x74;&#105;&#97;&#x6e;&#x63;&#x69;&#x31;&#50;&#x30;&#x38;&#x40;&#x6f;&#x75;&#116;&#x6c;&#111;&#x6f;&#x6b;&#46;&#x63;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#x74;&#105;&#97;&#x6e;&#99;&#x69;&#49;&#50;&#x30;&#56;&#x40;&#111;&#117;&#x74;&#108;&#111;&#111;&#x6b;&#46;&#x63;&#111;&#109;">&#x74;&#105;&#97;&#x6e;&#99;&#x69;&#49;&#50;&#x30;&#56;&#x40;&#111;&#117;&#x74;&#108;&#111;&#111;&#x6b;&#46;&#x63;&#111;&#109;</a></td>
 </tr>
 </tbody></table>
 <h2 id="本科划水阶段"><a href="#本科划水阶段" class="headerlink" title="本科划水阶段:"></a>本科划水阶段:</h2><blockquote>
@@ -275,6 +275,37 @@
         
         
       </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk" class="gitalk"></div>
+<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  window.onload = function () {
+    var gitalk = new Gitalk({
+      clientID: 'Ov23li4lrK2LKFGNLSLF',
+      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
+      id: window.location.pathname,
+      repo: 'Tianci-blog.github.io',
+      owner: 'Tianci-blog',
+      admin: 'Tianci-blog'
+    });
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        gitalk.render('gitalk');
+      });
+    } else {
+      gitalk.render('gitalk');
+    }
+  }
+</script>
+
+</section>
       
     </section>
   </div>

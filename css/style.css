@@ -191,7 +191,7 @@ body input {
 .col-lg-1,
 .col-xl-1 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -204,12 +204,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-1 {
+  width: 95%;
+}
 .col-2,
 .col-md-2,
 .col-lg-2,
 .col-xl-2 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -222,12 +225,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-2 {
+  width: 95%;
+}
 .col-3,
 .col-md-3,
 .col-lg-3,
 .col-xl-3 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -240,12 +246,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-3 {
+  width: 95%;
+}
 .col-4,
 .col-md-4,
 .col-lg-4,
 .col-xl-4 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -258,12 +267,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-4 {
+  width: 95%;
+}
 .col-5,
 .col-md-5,
 .col-lg-5,
 .col-xl-5 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -276,12 +288,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-5 {
+  width: 95%;
+}
 .col-6,
 .col-md-6,
 .col-lg-6,
 .col-xl-6 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -294,12 +309,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-6 {
+  width: 95%;
+}
 .col-7,
 .col-md-7,
 .col-lg-7,
 .col-xl-7 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -312,12 +330,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-7 {
+  width: 95%;
+}
 .col-8,
 .col-md-8,
 .col-lg-8,
 .col-xl-8 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -330,12 +351,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-8 {
+  width: 95%;
+}
 .col-9,
 .col-md-9,
 .col-lg-9,
 .col-xl-9 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -348,12 +372,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-9 {
+  width: 95%;
+}
 .col-10,
 .col-md-10,
 .col-lg-10,
 .col-xl-10 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -366,12 +393,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-10 {
+  width: 95%;
+}
 .col-11,
 .col-md-11,
 .col-lg-11,
 .col-xl-11 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -384,12 +414,15 @@ body input {
     padding-left: 0;
   }
 }
+.col-md-11 {
+  width: 95%;
+}
 .col-12,
 .col-md-12,
 .col-lg-12,
 .col-xl-12 {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -401,6 +434,9 @@ body input {
     padding-right: 0;
     padding-left: 0;
   }
+}
+.col-md-12 {
+  width: 95%;
 }
 .col-1 {
   -ms-flex: 0 0 8.333333%;
@@ -1037,19 +1073,19 @@ body input {
   text-align: center;
 }
 .navbar .menu-content.show {
-  transform: translateY(0);
+  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .navbar .menu-content {
   width: auto;
   padding: 0;
   display: flex;
   overflow: hidden;
-  transform: translateY(-40px);
+  animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   transition: all 0.15s ease-in;
 }
 @media (max-width: 768px) {
   .navbar .menu-content {
-    transform: translateY(0);
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 }
 .navbar .menu-content .menu-item {
@@ -1118,6 +1154,102 @@ body input {
     display: none;
   }
 }
+@-moz-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-o-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+@-o-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
 .paginator {
   text-align: center;
   margin-bottom: 30px;
@@ -1129,6 +1261,7 @@ body input {
   width: 30px;
   height: 30px;
   line-height: 30px;
+  border-radius: 5px;
 }
 .paginator span,
 .paginator a:hover {
@@ -1970,6 +2103,11 @@ body input {
 }
 .archive .archive-container {
   border-left: 1px #e6e6e6 dashed;
+}
+@media (max-width: 576px) {
+  .archive .archive-container {
+    padding-top: 50px;
+  }
 }
 .archive .archive-container .archive-post {
   padding-left: 30px;
