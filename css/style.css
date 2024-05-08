@@ -1869,6 +1869,8 @@ body input {
   padding: 15px 20px;
   background-color: var(--color-background-secondary);
   border-left: 4px solid #ff3b00;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .article .wrap .main .content blockquote p {
   margin: 0;
@@ -1882,6 +1884,8 @@ body input {
   list-style: none;
   padding: 15px 20px;
   margin-bottom: 50px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .article .wrap .main .extra .copyright .carrier-data {
   opacity: 0;
@@ -1984,6 +1988,7 @@ body input {
   padding: 10px;
   background-color: var(--color-background-secondary);
   text-align: center;
+  border-radius: 8px;
 }
 .article .wrap .main .comments .btn:hover {
   background-color: #ff3b00;

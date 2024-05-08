@@ -57,7 +57,7 @@
 
   <script>
     var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
+    var TIANCI = window.TIANCI || {};
     CONFIG = {
       isHome: false,
       fancybox: true,
@@ -197,7 +197,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     <!-- 
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
      -->
   </div>
 </nav>
@@ -223,30 +223,30 @@
         
         <p><strong>inputmode</strong></p>
 <p>在移动端会影响弹出键盘的布局</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 普通任意文本</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br><span class="line">// 电话号码</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;tel&quot;</span> /&gt;</span></span><br><span class="line">// url 地址</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;url&quot;</span> /&gt;</span></span><br><span class="line">// 邮箱</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;email&quot;</span> /&gt;</span></span><br><span class="line">// 数字</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;numeric&quot;</span> /&gt;</span></span><br><span class="line">// 小数</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;decimal&quot;</span> /&gt;</span></span><br><span class="line">// 搜索</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;search&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs html">// 普通任意文本<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>// 电话号码<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;tel&quot;</span> /&gt;</span><br>// url 地址<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;url&quot;</span> /&gt;</span><br>// 邮箱<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;email&quot;</span> /&gt;</span><br>// 数字<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;numeric&quot;</span> /&gt;</span><br>// 小数<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;decimal&quot;</span> /&gt;</span><br>// 搜索<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">inputmode</span>=<span class="hljs-string">&quot;search&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>poster</strong><br>用于设置视频预览图(视频播放前显示的图像)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 如果不设置默认视频第一帧</span><br><span class="line">&lt;video src=&quot;test.map4&quot; poster=&quot;test.png&quot;&gt;&lt;/video&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-comment">// 如果不设置默认视频第一帧</span><br>&lt;<span class="hljs-selector-tag">video</span> <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;test.map4&quot;</span> poster=<span class="hljs-string">&quot;test.png&quot;</span>&gt;&lt;/video&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>accesskey</strong></p>
 <p>可以为元素设置快捷键，当按下快捷键后，可以聚焦元素</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 按下 键盘 Alt + a 可聚焦元素，注意不同操作系统快捷键方式不同</span><br><span class="line">&lt;input type=&quot;text&quot; accesskey=&quot;a&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-comment">// 按下 键盘 Alt + a 可聚焦元素，注意不同操作系统快捷键方式不同</span><br>&lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;text&quot;</span> accesskey=<span class="hljs-string">&quot;a&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>tabindex</strong></p>
 <p>可以控制用户的 tab 键切换聚焦元素，默认切换的顺序是元素的顺序</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 按 tab 键切换聚焦顺序</span><br><span class="line">&lt;input type=&quot;text&quot; tabindex=&quot;3&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; tabindex=&quot;1&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; tabindex=&quot;2&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-comment">// 按 tab 键切换聚焦顺序</span><br>&lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;text&quot;</span> tabindex=<span class="hljs-string">&quot;3&quot;</span> /&gt;<br>&lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;text&quot;</span> tabindex=<span class="hljs-string">&quot;1&quot;</span> /&gt;<br>&lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;text&quot;</span> tabindex=<span class="hljs-string">&quot;2&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>dir</strong></p>
 <p>用于设置内部文字的排版方向</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p dir=&quot;ltr&quot;&gt;从左到右排版&lt;/p&gt;</span><br><span class="line">&lt;p dir=&quot;rtl&quot;&gt;从右到左排版&lt;/p&gt;</span><br><span class="line">&lt;p dir=&quot;auto&quot;&gt;自动检测排版&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;ltr&quot;</span>&gt;</span>从左到右排版<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;rtl&quot;</span>&gt;</span>从右到左排版<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;auto&quot;</span>&gt;</span>自动检测排版<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>spellcheck</strong></p>
 <p>该属性可以启用拼写检查，通常用于富文本编辑</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// contenteditable 可编辑元素,并且开启拼写检查</span><br><span class="line">&lt;div contenteditable spellcheck=&quot;true&quot;&gt;hell word&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-comment">// contenteditable 可编辑元素,并且开启拼写检查</span><br>&lt;<span class="hljs-keyword">div</span> contenteditable spellcheck=<span class="hljs-string">&quot;true&quot;</span>&gt;hell word&lt;/<span class="hljs-keyword">div</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>translate</strong></p>
 <p>可以指定某个元素内容是否触发浏览器的翻译行为，具体取决于浏览器的设置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 开启翻译&lt;div translate=&quot;yes&quot;&gt;hello word&lt;/div&gt;</span><br><span class="line">// 关闭翻译&lt;div translate=&quot;no&quot;&gt;hello word&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">// 开启翻译&lt;<span class="hljs-keyword">div</span> translate=<span class="hljs-string">&quot;yes&quot;</span>&gt;hello <span class="hljs-built_in">word</span>&lt;/<span class="hljs-keyword">div</span>&gt;<br>// 关闭翻译&lt;<span class="hljs-keyword">div</span> translate=<span class="hljs-string">&quot;no&quot;</span>&gt;hello <span class="hljs-built_in">word</span>&lt;/<span class="hljs-keyword">div</span>&gt;<br></code></pre></td></tr></table></figure>
 
       </section>
       <section class="extra">
@@ -276,26 +276,59 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk" class="gitalk"></div>
-<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
+<div id="SOHUCS"></div>
+<script type="text/javascript">
   window.onload = function () {
-    var gitalk = new Gitalk({
-      clientID: 'Ov23li4lrK2LKFGNLSLF',
-      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
-      id: window.location.pathname,
-      repo: 'Tianci-blog',
-      owner: 'Tianci-blog',
-      admin: 'Tianci-blog.github.io'
-    });
+    var loadChangYan = function () {
+      var appid = 'cyxhKen1i';
+      var conf = 'b6ddfb809e444222462eddbb84e685da';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+        var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.id = 'changyan_mobile_js';
+        script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
+          '&conf=' + conf;
+        head.appendChild(script);
+      } else {
+        var loadJs = function (d, a) {
+          var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+          var b = document.createElement("script");
+          b.setAttribute("type", "text/javascript");
+          b.setAttribute("charset", "UTF-8");
+          b.setAttribute("src", d);
+          if (typeof a === "function") {
+            if (window.attachEvent) {
+              b.onreadystatechange = function () {
+                var e = b.readyState;
+                if (e === "loaded" || e === "complete") {
+                  b.onreadystatechange = null;
+                  a()
+                }
+              }
+            } else {
+              b.onload = a
+            }
+          }
+          c.appendChild(b)
+        };
+        loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+          window.changyan.api.config({
+            appid: appid,
+            conf: conf
+          })
+        });
+      }
+    }
     if ( true ) {
       $("#comments-btn").on("click", function () {
         $(this).hide();
-        gitalk.render('gitalk');
+        loadChangYan();
       });
     } else {
-      gitalk.render('gitalk');
+      loadChangYan();
     }
   }
 </script>
@@ -337,7 +370,7 @@
           <i class="iconfont  iconmail "></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
   
 </footer>
   

@@ -55,7 +55,7 @@
 
   <script>
     var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
+    var TIANCI = window.TIANCI || {};
     CONFIG = {
       isHome: false,
       fancybox: true,
@@ -195,7 +195,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     <!-- 
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
      -->
   </div>
 </nav>
@@ -223,12 +223,12 @@
 <h3 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h3><blockquote>
 <p><code>v-md-editor </code>中没有构建 <code>form</code> 表单来上传文件，所以我们通过 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/Using_FormData_Objects">FormData 对象</a> 来模拟一个表单。向服务器的 <a target="_blank" rel="noopener" href="http://localhost:3000/upload">http://localhost:3000/upload</a> 接口发送 post 请求。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">handleUploadImage (event, insertImage, files) &#123;</span><br><span class="line">      event.preventDefault()</span><br><span class="line">      let API_URL = &#x27;http://localhost:3000&#x27;</span><br><span class="line">      let file = files[0]</span><br><span class="line">      let formData = new FormData()</span><br><span class="line">      formData.append(&#x27;avatar&#x27;, file)</span><br><span class="line"></span><br><span class="line">      console.log(files[0])</span><br><span class="line">      request(&quot;/getimg&quot;, &quot;post&quot;, formData).then((res) =&gt; &#123;</span><br><span class="line">        console.log(res)</span><br><span class="line"></span><br><span class="line">        insertImage(&#123;</span><br><span class="line">          url: `$&#123;API_URL&#125;/avatars/$&#123;res.data.filename&#125;`,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs vim">handleUploadImage (event, insertImage, <span class="hljs-keyword">files</span>) &#123;<br>      event.preventDefault()<br>      <span class="hljs-keyword">let</span> API_URL = <span class="hljs-string">&#x27;http://localhost:3000&#x27;</span><br>      <span class="hljs-keyword">let</span> <span class="hljs-keyword">file</span> = <span class="hljs-keyword">files</span>[<span class="hljs-number">0</span>]<br>      <span class="hljs-keyword">let</span> formData = <span class="hljs-keyword">new</span> FormData()<br>      formData.<span class="hljs-keyword">append</span>(<span class="hljs-string">&#x27;avatar&#x27;</span>, <span class="hljs-keyword">file</span>)<br><br>      console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">files</span>[<span class="hljs-number">0</span>])<br>      request(<span class="hljs-string">&quot;/getimg&quot;</span>, <span class="hljs-string">&quot;post&quot;</span>, formData).then((<span class="hljs-keyword">res</span>) =&gt; &#123;<br>        console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">res</span>)<br><br>        insertImage(&#123;<br>          url: `$&#123;API_URL&#125;/avatars/$&#123;<span class="hljs-keyword">res</span>.data.filename&#125;`,<br>        &#125;)<br>      &#125;)<br>    &#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h3><blockquote>
 <p>因为只是上传一张图片，所以用到了 <code>multer</code> 的 <code>single</code> 接口, 其参数 avatar 字符串对应客户端表单对象 <code>formData</code> 中包含的 <code>avatar </code>字段，这两个值必须保持一致。当客户端请求 &#x2F;upload 接口的时候，<code>multer </code>会给 request 对象中添加一个 file 对象属性。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const multer = require(&quot;multer&quot;);</span><br><span class="line">const path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">// 配置 图片重命名和后缀。 如果不配则上传的图片没有后缀名</span><br><span class="line">const upload = multer(&#123;</span><br><span class="line">  storage: multer.diskStorage(&#123;</span><br><span class="line">    destination: function (req, file, cb) &#123;</span><br><span class="line">      cb(null, &quot;public/image/&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    filename: function (req, file, cb) &#123;</span><br><span class="line">      const ext = path.extname(file.originalname);</span><br><span class="line">      const newName =</span><br><span class="line">        file.fieldname + &quot;-&quot; + Date.now() + &quot;-&quot; + Math.round(Math.random() * 1e9);</span><br><span class="line">      cb(null, newName + ext);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(&quot;/upload&quot;, upload.single(&quot;avatar&quot;), (req, res) =&gt; &#123;</span><br><span class="line">  console.log(req);</span><br><span class="line"></span><br><span class="line">  // 获取上传后的文件名，包含后缀</span><br><span class="line">  const fileName = req.file.filename;</span><br><span class="line"></span><br><span class="line">  console.log(&quot;touxiang输出：&quot;, fileName);</span><br><span class="line"></span><br><span class="line">  res.send(req.file);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> multer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;multer&quot;</span>);<br><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-comment">// 配置 图片重命名和后缀。 如果不配则上传的图片没有后缀名</span><br><span class="hljs-keyword">const</span> upload = <span class="hljs-title function_">multer</span>(&#123;<br>  <span class="hljs-attr">storage</span>: multer.<span class="hljs-title function_">diskStorage</span>(&#123;<br>    <span class="hljs-attr">destination</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">req, file, cb</span>) &#123;<br>      <span class="hljs-title function_">cb</span>(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;public/image/&quot;</span>);<br>    &#125;,<br>    <span class="hljs-attr">filename</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">req, file, cb</span>) &#123;<br>      <span class="hljs-keyword">const</span> ext = path.<span class="hljs-title function_">extname</span>(file.<span class="hljs-property">originalname</span>);<br>      <span class="hljs-keyword">const</span> newName =<br>        file.<span class="hljs-property">fieldname</span> + <span class="hljs-string">&quot;-&quot;</span> + <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>() + <span class="hljs-string">&quot;-&quot;</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">1e9</span>);<br>      <span class="hljs-title function_">cb</span>(<span class="hljs-literal">null</span>, newName + ext);<br>    &#125;,<br>  &#125;),<br>&#125;);<br><br>router.<span class="hljs-title function_">post</span>(<span class="hljs-string">&quot;/upload&quot;</span>, upload.<span class="hljs-title function_">single</span>(<span class="hljs-string">&quot;avatar&quot;</span>), <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(req);<br><br>  <span class="hljs-comment">// 获取上传后的文件名，包含后缀</span><br>  <span class="hljs-keyword">const</span> fileName = req.<span class="hljs-property">file</span>.<span class="hljs-property">filename</span>;<br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;touxiang输出：&quot;</span>, fileName);<br><br>  res.<span class="hljs-title function_">send</span>(req.<span class="hljs-property">file</span>);<br>&#125;);<br><br></code></pre></td></tr></table></figure>
 
       </section>
       <section class="extra">
@@ -258,26 +258,59 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk" class="gitalk"></div>
-<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
+<div id="SOHUCS"></div>
+<script type="text/javascript">
   window.onload = function () {
-    var gitalk = new Gitalk({
-      clientID: 'Ov23li4lrK2LKFGNLSLF',
-      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
-      id: window.location.pathname,
-      repo: 'Tianci-blog',
-      owner: 'Tianci-blog',
-      admin: 'Tianci-blog.github.io'
-    });
+    var loadChangYan = function () {
+      var appid = 'cyxhKen1i';
+      var conf = 'b6ddfb809e444222462eddbb84e685da';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+        var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.id = 'changyan_mobile_js';
+        script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
+          '&conf=' + conf;
+        head.appendChild(script);
+      } else {
+        var loadJs = function (d, a) {
+          var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+          var b = document.createElement("script");
+          b.setAttribute("type", "text/javascript");
+          b.setAttribute("charset", "UTF-8");
+          b.setAttribute("src", d);
+          if (typeof a === "function") {
+            if (window.attachEvent) {
+              b.onreadystatechange = function () {
+                var e = b.readyState;
+                if (e === "loaded" || e === "complete") {
+                  b.onreadystatechange = null;
+                  a()
+                }
+              }
+            } else {
+              b.onload = a
+            }
+          }
+          c.appendChild(b)
+        };
+        loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+          window.changyan.api.config({
+            appid: appid,
+            conf: conf
+          })
+        });
+      }
+    }
     if ( true ) {
       $("#comments-btn").on("click", function () {
         $(this).hide();
-        gitalk.render('gitalk');
+        loadChangYan();
       });
     } else {
-      gitalk.render('gitalk');
+      loadChangYan();
     }
   }
 </script>
@@ -319,7 +352,7 @@
           <i class="iconfont  iconmail "></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
   
 </footer>
   

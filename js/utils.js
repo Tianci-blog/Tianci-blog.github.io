@@ -1,7 +1,7 @@
 (function ($) {
   "use strict";
 
-  ZHAOO.utils = {
+  TIANCI.utils = {
     debounce: function (func, wait, immediate) {
       var timeout;
       return function () {
@@ -89,7 +89,7 @@
     }
   }
 
-  ZHAOO.zui = {
+  TIANCI.zui = {
     message: function ({ text, type, delay }) {
       var message = '<div class="zui-message ' + (type || "info") + '"><p>' + text + '</p></div>';
       $("body").append(message);

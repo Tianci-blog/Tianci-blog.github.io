@@ -55,7 +55,7 @@
 
   <script>
     var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
+    var TIANCI = window.TIANCI || {};
     CONFIG = {
       isHome: false,
       fancybox: true,
@@ -195,7 +195,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     <!-- 
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
      -->
   </div>
 </nav>
@@ -219,7 +219,7 @@
     <section class="main">
       <section class="content">
         
-        <h3 id="常用且实用的-vite-配置"><a href="#常用且实用的-vite-配置" class="headerlink" title="常用且实用的 vite 配置"></a>常用且实用的 vite 配置</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> timestamp = <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="title function_">vue</span>(),</span><br><span class="line">    <span class="title class_">Components</span>(&#123;</span><br><span class="line">      <span class="attr">resolvers</span>: [</span><br><span class="line">        <span class="title class_">IconsResolver</span>(),</span><br><span class="line">        <span class="title class_">AntDesignVueResolver</span>(&#123; <span class="attr">importStyle</span>: <span class="string">&quot;less&quot;</span> &#125;), <span class="comment">// 注入 less 全局变量</span></span><br><span class="line">      ],</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="title class_">Icons</span>(&#123; <span class="attr">autoInstall</span>: <span class="literal">true</span> &#125;),</span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">// 打包最小拆分</span></span><br><span class="line">  <span class="attr">build</span>: &#123;</span><br><span class="line">    <span class="attr">sourcemap</span>: <span class="literal">false</span>, <span class="comment">// &quot;false&quot; &quot;true&quot; 打包后生产映射文件，方便查看报错</span></span><br><span class="line">    <span class="attr">target</span>: <span class="string">&quot;modules&quot;</span>,</span><br><span class="line">    <span class="attr">outDir</span>: <span class="string">&quot;dist&quot;</span>, <span class="comment">//指定输出路径</span></span><br><span class="line">    <span class="attr">assetsDir</span>: <span class="string">&quot;assets&quot;</span>, <span class="comment">// 指定生成静态资源的存放路径</span></span><br><span class="line">    <span class="attr">rollupOptions</span>: &#123;</span><br><span class="line">      <span class="attr">minify</span>: <span class="string">&quot;terser&quot;</span>, <span class="comment">// 混淆器，terser构建后文件体积更小</span></span><br><span class="line">      <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="comment">// 拆分</span></span><br><span class="line">        <span class="title function_">manualChunks</span>(<span class="params">id</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span> (id.<span class="title function_">includes</span>(<span class="string">&quot;node_modules&quot;</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> id</span><br><span class="line">              .<span class="title function_">toString</span>()</span><br><span class="line">              .<span class="title function_">split</span>(<span class="string">&quot;node_modules/&quot;</span>)[<span class="number">1</span>]</span><br><span class="line">              .<span class="title function_">split</span>(<span class="string">&quot;/&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">              .<span class="title function_">toString</span>();</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 解决发布缓存问题</span></span><br><span class="line">        <span class="comment">// 入口文件名</span></span><br><span class="line">        <span class="attr">entryFileNames</span>: <span class="string">`assets/[name]-<span class="subst">$&#123;timestamp&#125;</span>.js`</span>,</span><br><span class="line">        <span class="comment">// 块文件名</span></span><br><span class="line">        <span class="attr">chunkFileNames</span>: <span class="string">`assets/[name]-[hash]-<span class="subst">$&#123;timestamp&#125;</span>.js`</span>,</span><br><span class="line">        <span class="comment">// 资源文件名 css 图片等等</span></span><br><span class="line">        <span class="attr">assetFileNames</span>: <span class="string">`assets/[name]-[hash]-<span class="subst">$&#123;timestamp&#125;</span>.[ext]`</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 配置主题</span></span><br><span class="line">  <span class="attr">css</span>: &#123;</span><br><span class="line">    <span class="attr">preprocessorOptions</span>: &#123;</span><br><span class="line">      <span class="attr">less</span>: &#123;</span><br><span class="line">        <span class="attr">javascriptEnabled</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">additionalData</span>: <span class="string">`@import &quot;<span class="subst">$&#123;path.resolve(</span></span></span><br><span class="line"><span class="subst"><span class="string">          __dirname,</span></span></span><br><span class="line"><span class="subst"><span class="string">          <span class="string">&quot;src/theme/theme.less&quot;</span></span></span></span><br><span class="line"><span class="subst"><span class="string">        )&#125;</span>&quot;;`</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">esbuild</span>: &#123;</span><br><span class="line">    <span class="comment">//打包时去掉 console.log</span></span><br><span class="line">    <span class="comment">// pure: [&quot;console.log&quot;],</span></span><br><span class="line">    <span class="comment">// minify: true,</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">base</span>: <span class="string">&quot;/web&quot;</span>,</span><br><span class="line">  <span class="attr">resolve</span>: &#123;</span><br><span class="line">    <span class="attr">alias</span>: &#123;</span><br><span class="line">      <span class="comment">// 如果你希望在模板中使用相对路径导入其他 Markdown 文件，需要配置别名</span></span><br><span class="line">      <span class="string">&quot;@/&quot;</span>: <span class="string">&quot;/src/&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <h3 id="常用且实用的-vite-配置"><a href="#常用且实用的-vite-配置" class="headerlink" title="常用且实用的 vite 配置"></a>常用且实用的 vite 配置</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> timestamp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getTime</span>();<br><br><span class="hljs-comment">// https://vitejs.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-title function_">vue</span>(),<br>    <span class="hljs-title class_">Components</span>(&#123;<br>      <span class="hljs-attr">resolvers</span>: [<br>        <span class="hljs-title class_">IconsResolver</span>(),<br>        <span class="hljs-title class_">AntDesignVueResolver</span>(&#123; <span class="hljs-attr">importStyle</span>: <span class="hljs-string">&quot;less&quot;</span> &#125;), <span class="hljs-comment">// 注入 less 全局变量</span><br>      ],<br>    &#125;),<br>    <span class="hljs-title class_">Icons</span>(&#123; <span class="hljs-attr">autoInstall</span>: <span class="hljs-literal">true</span> &#125;),<br>  ],<br>  <span class="hljs-comment">// 打包最小拆分</span><br>  <span class="hljs-attr">build</span>: &#123;<br>    <span class="hljs-attr">sourcemap</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &quot;false&quot; &quot;true&quot; 打包后生产映射文件，方便查看报错</span><br>    <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;modules&quot;</span>,<br>    <span class="hljs-attr">outDir</span>: <span class="hljs-string">&quot;dist&quot;</span>, <span class="hljs-comment">//指定输出路径</span><br>    <span class="hljs-attr">assetsDir</span>: <span class="hljs-string">&quot;assets&quot;</span>, <span class="hljs-comment">// 指定生成静态资源的存放路径</span><br>    <span class="hljs-attr">rollupOptions</span>: &#123;<br>      <span class="hljs-attr">minify</span>: <span class="hljs-string">&quot;terser&quot;</span>, <span class="hljs-comment">// 混淆器，terser构建后文件体积更小</span><br>      <span class="hljs-attr">output</span>: &#123;<br>        <span class="hljs-comment">// 拆分</span><br>        <span class="hljs-title function_">manualChunks</span>(<span class="hljs-params">id</span>) &#123;<br>          <span class="hljs-keyword">if</span> (id.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;node_modules&quot;</span>)) &#123;<br>            <span class="hljs-keyword">return</span> id<br>              .<span class="hljs-title function_">toString</span>()<br>              .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;node_modules/&quot;</span>)[<span class="hljs-number">1</span>]<br>              .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;/&quot;</span>)[<span class="hljs-number">0</span>]<br>              .<span class="hljs-title function_">toString</span>();<br>          &#125;<br>        &#125;,<br>        <span class="hljs-comment">// 解决发布缓存问题</span><br>        <span class="hljs-comment">// 入口文件名</span><br>        <span class="hljs-attr">entryFileNames</span>: <span class="hljs-string">`assets/[name]-<span class="hljs-subst">$&#123;timestamp&#125;</span>.js`</span>,<br>        <span class="hljs-comment">// 块文件名</span><br>        <span class="hljs-attr">chunkFileNames</span>: <span class="hljs-string">`assets/[name]-[hash]-<span class="hljs-subst">$&#123;timestamp&#125;</span>.js`</span>,<br>        <span class="hljs-comment">// 资源文件名 css 图片等等</span><br>        <span class="hljs-attr">assetFileNames</span>: <span class="hljs-string">`assets/[name]-[hash]-<span class="hljs-subst">$&#123;timestamp&#125;</span>.[ext]`</span>,<br>      &#125;,<br>    &#125;,<br>  &#125;,<br>  <span class="hljs-comment">// 配置主题</span><br>  <span class="hljs-attr">css</span>: &#123;<br>    <span class="hljs-attr">preprocessorOptions</span>: &#123;<br>      <span class="hljs-attr">less</span>: &#123;<br>        <span class="hljs-attr">javascriptEnabled</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">additionalData</span>: <span class="hljs-string">`@import &quot;<span class="hljs-subst">$&#123;path.resolve(</span></span><br><span class="hljs-subst"><span class="hljs-string">          __dirname,</span></span><br><span class="hljs-subst"><span class="hljs-string">          <span class="hljs-string">&quot;src/theme/theme.less&quot;</span></span></span><br><span class="hljs-subst"><span class="hljs-string">        )&#125;</span>&quot;;`</span>,<br>      &#125;,<br>    &#125;,<br>  &#125;,<br>  <span class="hljs-attr">esbuild</span>: &#123;<br>    <span class="hljs-comment">//打包时去掉 console.log</span><br>    <span class="hljs-comment">// pure: [&quot;console.log&quot;],</span><br>    <span class="hljs-comment">// minify: true,</span><br>  &#125;,<br><br>  <span class="hljs-attr">base</span>: <span class="hljs-string">&quot;/web&quot;</span>,<br>  <span class="hljs-attr">resolve</span>: &#123;<br>    <span class="hljs-attr">alias</span>: &#123;<br>      <span class="hljs-comment">// 如果你希望在模板中使用相对路径导入其他 Markdown 文件，需要配置别名</span><br>      <span class="hljs-string">&quot;@/&quot;</span>: <span class="hljs-string">&quot;/src/&quot;</span>,<br>    &#125;,<br>  &#125;,<br>&#125;);<br></code></pre></td></tr></table></figure>
 
       </section>
       <section class="extra">
@@ -249,26 +249,59 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk" class="gitalk"></div>
-<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
+<div id="SOHUCS"></div>
+<script type="text/javascript">
   window.onload = function () {
-    var gitalk = new Gitalk({
-      clientID: 'Ov23li4lrK2LKFGNLSLF',
-      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
-      id: window.location.pathname,
-      repo: 'Tianci-blog',
-      owner: 'Tianci-blog',
-      admin: 'Tianci-blog.github.io'
-    });
+    var loadChangYan = function () {
+      var appid = 'cyxhKen1i';
+      var conf = 'b6ddfb809e444222462eddbb84e685da';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+        var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.id = 'changyan_mobile_js';
+        script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
+          '&conf=' + conf;
+        head.appendChild(script);
+      } else {
+        var loadJs = function (d, a) {
+          var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+          var b = document.createElement("script");
+          b.setAttribute("type", "text/javascript");
+          b.setAttribute("charset", "UTF-8");
+          b.setAttribute("src", d);
+          if (typeof a === "function") {
+            if (window.attachEvent) {
+              b.onreadystatechange = function () {
+                var e = b.readyState;
+                if (e === "loaded" || e === "complete") {
+                  b.onreadystatechange = null;
+                  a()
+                }
+              }
+            } else {
+              b.onload = a
+            }
+          }
+          c.appendChild(b)
+        };
+        loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+          window.changyan.api.config({
+            appid: appid,
+            conf: conf
+          })
+        });
+      }
+    }
     if ( true ) {
       $("#comments-btn").on("click", function () {
         $(this).hide();
-        gitalk.render('gitalk');
+        loadChangYan();
       });
     } else {
-      gitalk.render('gitalk');
+      loadChangYan();
     }
   }
 </script>
@@ -310,7 +343,7 @@
           <i class="iconfont  iconmail "></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
   
 </footer>
   

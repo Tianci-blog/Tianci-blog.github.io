@@ -55,7 +55,7 @@
 
   <script>
     var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
+    var TIANCI = window.TIANCI || {};
     CONFIG = {
       isHome: false,
       fancybox: true,
@@ -195,7 +195,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     <!-- 
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
      -->
   </div>
 </nav>
@@ -225,7 +225,7 @@
 <ol>
 <li><strong>base64 中文乱码</strong>，因为有些库比如 crypto-js 上次遇到的，具体是什么原因没查。</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Base64</span> = &#123;</span><br><span class="line">  <span class="title function_">encode</span>(<span class="params">str</span>) &#123;</span><br><span class="line">    <span class="comment">// 首先，我们使用 encodeURIComponent 来获得百分比编码的UTF-8，然后我们将百分比编码转换为原始字节，最后存储到btoa里面</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">btoa</span>(</span><br><span class="line">      <span class="built_in">encodeURIComponent</span>(str).<span class="title function_">replace</span>(</span><br><span class="line">        <span class="regexp">/%([0-9A-F]&#123;2&#125;)/g</span>,</span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">toSolidBytes</span>(<span class="params">match, p1</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(<span class="title class_">Number</span>(<span class="string">&quot;0x&quot;</span> + p1));</span><br><span class="line">        &#125;</span><br><span class="line">      )</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">decode</span>(<span class="params">str</span>) &#123;</span><br><span class="line">    <span class="comment">// 过程：从字节流到百分比编码，再到原始字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>(</span><br><span class="line">      <span class="title function_">atob</span>(str)</span><br><span class="line">        .<span class="title function_">split</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">c</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;%&quot;</span> + (<span class="string">&quot;00&quot;</span> + c.<span class="title function_">charCodeAt</span>(<span class="number">0</span>).<span class="title function_">toString</span>(<span class="number">16</span>)).<span class="title function_">slice</span>(-<span class="number">2</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">        .<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> encoded = <span class="title class_">Base64</span>.<span class="title function_">encode</span>(<span class="string">&quot;天赐&quot;</span>); <span class="comment">// &quot;5LiA6aKX5LiN55SY5Z2g6JC955qE5rWB5pif&quot;</span></span><br><span class="line"><span class="keyword">let</span> decoded = <span class="title class_">Base64</span>.<span class="title function_">decode</span>(encoded); <span class="comment">// &quot;天赐&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Base64</span> = &#123;<br>  <span class="hljs-title function_">encode</span>(<span class="hljs-params">str</span>) &#123;<br>    <span class="hljs-comment">// 首先，我们使用 encodeURIComponent 来获得百分比编码的UTF-8，然后我们将百分比编码转换为原始字节，最后存储到btoa里面</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">btoa</span>(<br>      <span class="hljs-built_in">encodeURIComponent</span>(str).<span class="hljs-title function_">replace</span>(<br>        <span class="hljs-regexp">/%([0-9A-F]&#123;2&#125;)/g</span>,<br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">toSolidBytes</span>(<span class="hljs-params">match, p1</span>) &#123;<br>          <span class="hljs-keyword">return</span> <span class="hljs-title class_">String</span>.<span class="hljs-title function_">fromCharCode</span>(<span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;0x&quot;</span> + p1));<br>        &#125;<br>      )<br>    );<br>  &#125;,<br>  <span class="hljs-title function_">decode</span>(<span class="hljs-params">str</span>) &#123;<br>    <span class="hljs-comment">// 过程：从字节流到百分比编码，再到原始字符串</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">decodeURIComponent</span>(<br>      <span class="hljs-title function_">atob</span>(str)<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        .<span class="hljs-title function_">map</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">c</span>) &#123;<br>          <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;%&quot;</span> + (<span class="hljs-string">&quot;00&quot;</span> + c.<span class="hljs-title function_">charCodeAt</span>(<span class="hljs-number">0</span>).<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>)).<span class="hljs-title function_">slice</span>(-<span class="hljs-number">2</span>);<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)<br>    );<br>  &#125;,<br>&#125;;<br><span class="hljs-keyword">let</span> encoded = <span class="hljs-title class_">Base64</span>.<span class="hljs-title function_">encode</span>(<span class="hljs-string">&quot;天赐&quot;</span>); <span class="hljs-comment">// &quot;5LiA6aKX5LiN55SY5Z2g6JC955qE5rWB5pif&quot;</span><br><span class="hljs-keyword">let</span> decoded = <span class="hljs-title class_">Base64</span>.<span class="hljs-title function_">decode</span>(encoded); <span class="hljs-comment">// &quot;天赐&quot;</span><br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li><strong>base64 经过 http 传输 +号变空格</strong></li>
@@ -239,7 +239,7 @@
 </blockquote>
 <p><img    class="lazyload" data-original="/images/article_picture/image-16.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20240505144423894</span></p>
 <p><strong>解决方法:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">传输之前把 + 替换 %2B 即可</span><br><span class="line"></span><br><span class="line">str.<span class="title function_">replace</span>(<span class="string">&quot;+&quot;</span>, <span class="string">&quot;%2B&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 最好统一是UTF-8格式</span></span><br><span class="line"><span class="title class_">URLDecoder</span>.<span class="title function_">decode</span>(str,<span class="string">&quot;UTF-8&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">传输之前把 + 替换 %2B 即可<br><br>str.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&quot;+&quot;</span>, <span class="hljs-string">&quot;%2B&quot;</span>);<br><br><span class="hljs-comment">// 最好统一是UTF-8格式</span><br><span class="hljs-title class_">URLDecoder</span>.<span class="hljs-title function_">decode</span>(str,<span class="hljs-string">&quot;UTF-8&quot;</span>);<br></code></pre></td></tr></table></figure>
 
       </section>
       <section class="extra">
@@ -269,26 +269,59 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk" class="gitalk"></div>
-<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
+<div id="SOHUCS"></div>
+<script type="text/javascript">
   window.onload = function () {
-    var gitalk = new Gitalk({
-      clientID: 'Ov23li4lrK2LKFGNLSLF',
-      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
-      id: window.location.pathname,
-      repo: 'Tianci-blog',
-      owner: 'Tianci-blog',
-      admin: 'Tianci-blog.github.io'
-    });
+    var loadChangYan = function () {
+      var appid = 'cyxhKen1i';
+      var conf = 'b6ddfb809e444222462eddbb84e685da';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+        var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.id = 'changyan_mobile_js';
+        script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
+          '&conf=' + conf;
+        head.appendChild(script);
+      } else {
+        var loadJs = function (d, a) {
+          var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+          var b = document.createElement("script");
+          b.setAttribute("type", "text/javascript");
+          b.setAttribute("charset", "UTF-8");
+          b.setAttribute("src", d);
+          if (typeof a === "function") {
+            if (window.attachEvent) {
+              b.onreadystatechange = function () {
+                var e = b.readyState;
+                if (e === "loaded" || e === "complete") {
+                  b.onreadystatechange = null;
+                  a()
+                }
+              }
+            } else {
+              b.onload = a
+            }
+          }
+          c.appendChild(b)
+        };
+        loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+          window.changyan.api.config({
+            appid: appid,
+            conf: conf
+          })
+        });
+      }
+    }
     if ( true ) {
       $("#comments-btn").on("click", function () {
         $(this).hide();
-        gitalk.render('gitalk');
+        loadChangYan();
       });
     } else {
-      gitalk.render('gitalk');
+      loadChangYan();
     }
   }
 </script>
@@ -330,7 +363,7 @@
           <i class="iconfont  iconmail "></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
   
 </footer>
   

@@ -6,7 +6,7 @@
       $(".menu").fadeIn(300);
       $("body").addClass("lock-screen");
       fn.hideFab();
-      ZHAOO.utils.bindKeyup(27, function () {
+      TIANCI.utils.bindKeyup(27, function () {
         fn.hideMenu();
         $(".navbar").removeClass("hide");
       });
@@ -19,7 +19,7 @@
       $(".search").fadeIn(300);
       $("body").addClass("lock-screen");
       fn.hideFab();
-      ZHAOO.utils.bindKeyup(27, function () {
+      TIANCI.utils.bindKeyup(27, function () {
         fn.hideSearch();
         $(".navbar").removeClass("hide");
       });
@@ -76,7 +76,7 @@
         }
         $(window).on(
           "scroll",
-          ZHAOO.utils.throttle(function () {
+          TIANCI.utils.throttle(function () {
             var before = $(this).scrollTop();
             $(window).on("scroll", function () {
               var after = $(this).scrollTop();
@@ -118,7 +118,7 @@
         center();
         $(window).on(
           "scroll",
-          ZHAOO.utils.throttle(function () {
+          TIANCI.utils.throttle(function () {
             center();
             var before = $(this).scrollTop();
             $(window).on("scroll", function () {
@@ -387,10 +387,10 @@
     carrier: function () {
       $(".j-carrier-btn").on(
         "click",
-        ZHAOO.utils.throttle(function () {
+        TIANCI.utils.throttle(function () {
           $(".j-carrier-data").select();
           document.execCommand("Copy");
-          ZHAOO.zui.message({ text: "已复制到剪切板", type: "success" });
+          TIANCI.zui.message({ text: "已复制到剪切板", type: "success" });
         }, 1000)
       );
     },
@@ -398,9 +398,9 @@
     navbar: function () {
       $(window)
         .resize(
-          ZHAOO.utils.throttle(function () {
-            ZHAOO.utils.isDesktop() && fn.navbar.desktop();
-            ZHAOO.utils.isMobile() && fn.navbar.mobile();
+          TIANCI.utils.throttle(function () {
+            TIANCI.utils.isDesktop() && fn.navbar.desktop();
+            TIANCI.utils.isMobile() && fn.navbar.mobile();
           }, 1000)
         )
         .resize();
@@ -512,12 +512,12 @@
       var playList = list.filter(function (item) {
         return (
           item.enable &&
-          ZHAOO.utils.isDuringDate(item.startTime, item.endTime) &&
+          TIANCI.utils.isDuringDate(item.startTime, item.endTime) &&
           item
         );
       });
       playList.forEach(function (item) {
-        ZHAOO.zui.notification({
+        TIANCI.zui.notification({
           title: item.title,
           content: item.content,
           delay: delay,

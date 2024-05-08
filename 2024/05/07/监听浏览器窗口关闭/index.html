@@ -56,7 +56,7 @@
 
   <script>
     var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
+    var TIANCI = window.TIANCI || {};
     CONFIG = {
       isHome: false,
       fancybox: true,
@@ -196,7 +196,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     <!-- 
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
      -->
   </div>
 </nav>
@@ -223,7 +223,7 @@
         <h3 id="监听浏览器窗口关闭"><a href="#监听浏览器窗口关闭" class="headerlink" title="监听浏览器窗口关闭"></a>监听浏览器窗口关闭</h3><blockquote>
 <p>有时候需要监听关闭，误触，未保存等等情况。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">beforeunload</span> = (<span class="params">event</span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Cancel the event as stated by the standard.</span></span><br><span class="line">  event.<span class="title function_">preventDefault</span>();</span><br><span class="line">  <span class="comment">// Chrome requires returnValue to be set.</span></span><br><span class="line">  event.<span class="property">returnValue</span> = <span class="string">&quot;关闭前&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 监听浏览器窗口关闭</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">beforeunloadHandler</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;beforeunload&quot;</span>, beforeunload);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 卸载浏览器窗口关闭监听</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">removeBeforeunloadHandler</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;beforeunload&quot;</span>, beforeunload);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">beforeunload</span> = (<span class="hljs-params">event</span>) =&gt; &#123;<br>  <span class="hljs-comment">// Cancel the event as stated by the standard.</span><br>  event.<span class="hljs-title function_">preventDefault</span>();<br>  <span class="hljs-comment">// Chrome requires returnValue to be set.</span><br>  event.<span class="hljs-property">returnValue</span> = <span class="hljs-string">&quot;关闭前&quot;</span>;<br>&#125;;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@description</span>: 监听浏览器窗口关闭</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">beforeunloadHandler</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;beforeunload&quot;</span>, beforeunload);<br>&#125;;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@description</span>: 卸载浏览器窗口关闭监听</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">removeBeforeunloadHandler</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&quot;beforeunload&quot;</span>, beforeunload);<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 
       </section>
@@ -254,26 +254,59 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk" class="gitalk"></div>
-<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
+<div id="SOHUCS"></div>
+<script type="text/javascript">
   window.onload = function () {
-    var gitalk = new Gitalk({
-      clientID: 'Ov23li4lrK2LKFGNLSLF',
-      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
-      id: window.location.pathname,
-      repo: 'Tianci-blog',
-      owner: 'Tianci-blog',
-      admin: 'Tianci-blog.github.io'
-    });
+    var loadChangYan = function () {
+      var appid = 'cyxhKen1i';
+      var conf = 'b6ddfb809e444222462eddbb84e685da';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+        var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.id = 'changyan_mobile_js';
+        script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
+          '&conf=' + conf;
+        head.appendChild(script);
+      } else {
+        var loadJs = function (d, a) {
+          var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+          var b = document.createElement("script");
+          b.setAttribute("type", "text/javascript");
+          b.setAttribute("charset", "UTF-8");
+          b.setAttribute("src", d);
+          if (typeof a === "function") {
+            if (window.attachEvent) {
+              b.onreadystatechange = function () {
+                var e = b.readyState;
+                if (e === "loaded" || e === "complete") {
+                  b.onreadystatechange = null;
+                  a()
+                }
+              }
+            } else {
+              b.onload = a
+            }
+          }
+          c.appendChild(b)
+        };
+        loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+          window.changyan.api.config({
+            appid: appid,
+            conf: conf
+          })
+        });
+      }
+    }
     if ( true ) {
       $("#comments-btn").on("click", function () {
         $(this).hide();
-        gitalk.render('gitalk');
+        loadChangYan();
       });
     } else {
-      gitalk.render('gitalk');
+      loadChangYan();
     }
   }
 </script>
@@ -315,7 +348,7 @@
           <i class="iconfont  iconmail "></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
   
 </footer>
   

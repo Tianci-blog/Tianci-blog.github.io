@@ -56,7 +56,7 @@
 
   <script>
     var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
+    var TIANCI = window.TIANCI || {};
     CONFIG = {
       isHome: false,
       fancybox: true,
@@ -196,7 +196,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     <!-- 
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
      -->
   </div>
 </nav>
@@ -222,23 +222,23 @@
         
         <p>1.<strong>模糊文字</strong></p>
 <p>用 text-shadow 制造底层模糊文字，用-webkit-text-fill-color 填充颜色为透明。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;text&quot;&gt;Hello World！&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.text &#123;</span><br><span class="line">  font-size: 72px;</span><br><span class="line">  text-shadow: 0 0 6px blueviolet;</span><br><span class="line">  -webkit-text-fill-color: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs applescript">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;Hello World！&lt;/<span class="hljs-keyword">div</span>&gt;<br><br>.<span class="hljs-built_in">text</span> &#123;<br>  font-size: <span class="hljs-number">72</span>px;<br>  <span class="hljs-built_in">text</span>-shadow: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span>px blueviolet;<br>  -webkit-<span class="hljs-built_in">text</span>-fill-color: transparent;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img   class="lazyload" data-original="/images/article_picture/image-10.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 <p>2.<strong>镂空文字</strong></p>
 <p>用-webkit-text-stroke 来给文字外围描边</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;text&quot;&gt;Hello World！&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.text&#123;</span><br><span class="line">  font-size: 72px;</span><br><span class="line">  -webkit-text-stroke: 1px #1980ff;</span><br><span class="line">  -webkit-text-fill-color: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs applescript">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;Hello World！&lt;/<span class="hljs-keyword">div</span>&gt;<br><br>.<span class="hljs-built_in">text</span>&#123;<br>  font-size: <span class="hljs-number">72</span>px;<br>  -webkit-<span class="hljs-built_in">text</span>-stroke: <span class="hljs-number">1</span>px <span class="hljs-comment">#1980ff;</span><br>  -webkit-<span class="hljs-built_in">text</span>-fill-color: transparent;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img   class="lazyload" data-original="/images/article_picture/image-11.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 <p>3.<strong>渐变文字</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;text&quot;&gt;Hello World！&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.text&#123;</span><br><span class="line">  font-size: 72px;</span><br><span class="line">  background: linear-gradient(to right, blue, red);</span><br><span class="line">  -webkit-text-fill-color: transparent;</span><br><span class="line">  -webkit-background-clip: text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs processing">&lt;div class=<span class="hljs-string">&quot;text&quot;</span>&gt;Hello World！&lt;/div&gt;<br><br>.<span class="hljs-property">text</span>&#123;<br>  font-<span class="hljs-built_in">size</span>: <span class="hljs-number">72</span>px;<br>  <span class="hljs-built_in">background</span>: linear-<span class="hljs-title function_">gradient</span>(to right, <span class="hljs-built_in">blue</span>, <span class="hljs-built_in">red</span>);<br>  -webkit-<span class="hljs-built_in">text</span>-<span class="hljs-built_in">fill</span>-<span class="hljs-type">color</span>: transparent;<br>  -webkit-<span class="hljs-built_in">background</span>-clip: <span class="hljs-built_in">text</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img   class="lazyload" data-original="/images/article_picture/image-12.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;text&quot;&gt;Hello World！&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.text&#123;</span><br><span class="line">  font-size: 72px;</span><br><span class="line">  background: linear-gradient(to bottom, blue, red);</span><br><span class="line">  -webkit-text-fill-color: transparent;</span><br><span class="line">  -webkit-background-clip: text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs processing">&lt;div class=<span class="hljs-string">&quot;text&quot;</span>&gt;Hello World！&lt;/div&gt;<br><br>.<span class="hljs-property">text</span>&#123;<br>  font-<span class="hljs-built_in">size</span>: <span class="hljs-number">72</span>px;<br>  <span class="hljs-built_in">background</span>: linear-<span class="hljs-title function_">gradient</span>(to bottom, <span class="hljs-built_in">blue</span>, <span class="hljs-built_in">red</span>);<br>  -webkit-<span class="hljs-built_in">text</span>-<span class="hljs-built_in">fill</span>-<span class="hljs-type">color</span>: transparent;<br>  -webkit-<span class="hljs-built_in">background</span>-clip: <span class="hljs-built_in">text</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img   class="lazyload" data-original="/images/article_picture/image-13.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 <p>4.<strong>背景图片文字</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;text&quot;&gt;</span><br><span class="line">    &lt;span&gt;Hello World！&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;Hello World！&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.text &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">    /*背景样式*/</span><br><span class="line">    height: 800px;</span><br><span class="line">    width: 450px;</span><br><span class="line">    background-size: 450px 800px;</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-image: url(./beautiful-gril.jpg);</span><br><span class="line">    /*文字样式*/</span><br><span class="line">    font-size: 60px;</span><br><span class="line">    font-weight: bold;</span><br><span class="line">    text-align: center;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">    /*图片文字样式*/</span><br><span class="line">    -webkit-text-fill-color: transparent;</span><br><span class="line">    -webkit-background-clip: text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs arduino">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;<br>    &lt;span&gt;Hello World！&lt;/span&gt;<br>    &lt;span&gt;Hello World！&lt;/span&gt;<br>&lt;/div&gt;<br><br>.text &#123;<br>    display: flex;<br>    flex-direction: column;<br>    justify-content: center;<br>    align-items: center;<br>    <span class="hljs-comment">/*背景样式*/</span><br>    height: <span class="hljs-number">800</span>px;<br>    width: <span class="hljs-number">450</span>px;<br>    background-size: <span class="hljs-number">450</span>px <span class="hljs-number">800</span>px;<br>    background-repeat: no-repeat;<br>    background-image: <span class="hljs-built_in">url</span>(./beautiful-gril.jpg);<br>    <span class="hljs-comment">/*文字样式*/</span><br>    font-size: <span class="hljs-number">60</span>px;<br>    font-weight: bold;<br>    text-align: center;<br>    line-height: <span class="hljs-number">100</span>px;<br>    <span class="hljs-comment">/*图片文字样式*/</span><br>    -webkit-text-fill-color: transparent;<br>    -webkit-background-clip: text;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img   class="lazyload" data-original="/images/article_picture/image-14.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 
@@ -270,26 +270,59 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk" class="gitalk"></div>
-<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
+<div id="SOHUCS"></div>
+<script type="text/javascript">
   window.onload = function () {
-    var gitalk = new Gitalk({
-      clientID: 'Ov23li4lrK2LKFGNLSLF',
-      clientSecret: '853f436fe57399925e135112b2bfebc54f289585',
-      id: window.location.pathname,
-      repo: 'Tianci-blog',
-      owner: 'Tianci-blog',
-      admin: 'Tianci-blog.github.io'
-    });
+    var loadChangYan = function () {
+      var appid = 'cyxhKen1i';
+      var conf = 'b6ddfb809e444222462eddbb84e685da';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+        var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.id = 'changyan_mobile_js';
+        script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid +
+          '&conf=' + conf;
+        head.appendChild(script);
+      } else {
+        var loadJs = function (d, a) {
+          var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+          var b = document.createElement("script");
+          b.setAttribute("type", "text/javascript");
+          b.setAttribute("charset", "UTF-8");
+          b.setAttribute("src", d);
+          if (typeof a === "function") {
+            if (window.attachEvent) {
+              b.onreadystatechange = function () {
+                var e = b.readyState;
+                if (e === "loaded" || e === "complete") {
+                  b.onreadystatechange = null;
+                  a()
+                }
+              }
+            } else {
+              b.onload = a
+            }
+          }
+          c.appendChild(b)
+        };
+        loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+          window.changyan.api.config({
+            appid: appid,
+            conf: conf
+          })
+        });
+      }
+    }
     if ( true ) {
       $("#comments-btn").on("click", function () {
         $(this).hide();
-        gitalk.render('gitalk');
+        loadChangYan();
       });
     } else {
-      gitalk.render('gitalk');
+      loadChangYan();
     }
   }
 </script>
@@ -331,7 +364,7 @@
           <i class="iconfont  iconmail "></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="">zhaoo</a></p></div>
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_self" href="#">zhaoo</a></p></div>
   
 </footer>
   
